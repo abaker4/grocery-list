@@ -1,0 +1,23 @@
+web:
+  build: .
+  command: php -S 0.0.0.0:8000 -t /code/src
+  ports:
+    - "8000:8000"
+  links:
+    - db
+  volumes:
+    - .:/code
+  environment:
+    DB_HOST: db
+    DB_NAME: grocerylist
+    DB_USER: root
+    DB_PASSWORD: admin
+
+db:
+  hostname: db
+  ports:
+    - "3306:3306"
+  image: mysql
+  environment:
+    MYSQL_DATABASE: grocerylist
+    MYSQL_ROOT_PASSWORD: admin
