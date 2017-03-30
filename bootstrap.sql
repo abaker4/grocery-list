@@ -1,4 +1,4 @@
-Create Database grocerylist;
+CREATE DATABASE grocerylist;
 use grocerylist; 
 
 CREATE TABLE `list` (
