@@ -28,12 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt->execute(array());
     $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-    return prepareResponse($result);
+    echo prepareResponse($result);
 }
 
 
 function prepareResponse($data) {
-    header('Content-Type: application/json"');
+    header('Content-Type: application/json');
     header('Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Accept');
 
