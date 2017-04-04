@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url("../assets/food2.jpg");
+    background-size: cover;
+
+}
+#jumbotron {
+    background-image: url("../assets/farm.jpg");
+    background-size: cover;
+
+}
+
