@@ -4,8 +4,257 @@
 
 }
 #jumbotron {
-    background-image: url("../assets/farm.jpg");
-    background-size: cover;
 
+    background: grey;
+}
+
+#main-header{
+    font-family: 'pacifico', cursive;
+    text-shadow: 0 1px 0 rgba(0,0,0, .4);
+    line-height: .65;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+#nav-header {
+    font-family: 'pacifico', cursive;
+}
+#sub-header {
+    font-family: 'pacifico', cursive;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+}
+.awesome {
+    font-family: 'lato', sans-serif;
+    color: #4c4c4c;
+    background: white;
+    box-sizing: border-box;
+}
+.registrar {
+    color: white;
+}
+#todo {
+    font-family: 'pacifico', cursive;
+    text-shadow: 0 1px 0 rgba(0,0,0, .4);
+    line-height: .65;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+.items{
+    margin-top: 0;
+}
+.paragraph {
+    font-size: 1.1em;
+    text-shadow: 0 1px 0 rgba(0,0,0, .25);
+}
+
+.awesome form button {
+    color: white;
+}
+.awesome form button {
+    padding: 12px 0;
+    margin-top: .5em;
+}
+.awesome form button {
+    padding: 0 1em;
+    font-size: 1em;
+    background: #7bcbc4;
+    border-radius: .2em;
+}
+.awesome button {
+    cursor: pointer;
+}
+
+.awesome form {
+    width: 95%;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2.5em;
+}
+.awesome form {
+    width: 50%;
+    background: white;
+    display: inline-block;
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    border-radius: .2em;
+    border: solid 4px white;
+    box-shadow: 0 1px 14px rgba(0,0,0, .12);
+}
+
+
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+.awesome form input {
+    font-size: 1em;
+    text-align: center;
+}
+.awesome ul {
+    margin: 0;
+}
+.awesome .main {
+    padding: 2em 1em .75em;
+}
+.awesome li span,
+.awesome li input[type=text] {
+    color: #707070;
+    font-size: 1.3em;
+    margin-bottom: .3em;
+}
+.awesome li input[type=text] {
+    padding: .2em;
+    width: 95%;
+    border: 1px dotted rgba(0,0,0, .2);
+}
+.awesome li label {
+    font-size: .9em;
+    display: block;
+    color: rgba(112, 112, 112, .55);
+}
+.awesome li span,
+.awesome li input[type=text]:first-child {
+    display: block;
+}
+.awesome li button {
+    font-size: .78em;
+    margin-top: 1.65em;
+    margin-right: .4em;
+    border-radius: .3em;
+    padding: .4em .6em;
+    color: white;
+    background: #58b7cd;
+}
+.awesome li button:last-child {
+    background: rgba(88, 183, 205, .5);
+}
+.awesome ul {
+    width: 100%;
+    max-width: 900px;
+    margin: 2.5em auto;
+    border-radius: .35em;
+    background: #fcfcfc;
+    overflow: hidden;
+    box-shadow: 0 0 26px rgba(0,0,0, .13);
+    box-sizing: border-box;
+}
+.awesome div > input:last-child {
+    font-size: 1em;
+    margin-left: 6px;
+}
+.awesome div > label {
+    color: #767676;
+}
+
+/* responded */
+ .responded {
+    transition: 0.4s;
+    border-color: rgba(88, 183, 205, .9);
+}
+ .responded label {
+    transition: 0.4s;
+    color: rgba(88, 183, 205, 1);
+}
+
+
+@media (min-width: 0) and (max-width: 768px) {
+    .awesome header {
+        padding: 1.25em;
+    }
+    .awesome  h1 {
+        font-size: 3.6em;
+        margin: .3em 0 0;
+    }
+    .awesome ul li {
+        margin-bottom: 1em;
+    }
+    .awesome form {
+        width: 95%;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 2.5em;
+    }
+    .awesome  form button {
+        padding: 12px 0;
+        margin-top: .5em;
+    }
+    .awesome  form input {
+        font-size: 1em;
+        text-align: center;
+    }
+    .awesome  {
+        margin: 0;
+    }
+    .awesome .main {
+        padding: 2em 1em .75em;
+    }
+}
+
+@media (min-width: 769px) {
+    .awesome  header {
+        height: 280px;
+        padding: 2.5em 1em 1em;
+        background-position: 0 -95px;
+    }
+     .main > div {
+        float: right;
+        display: inline-block;
+        margin-top: 12px;
+        margin-right: 1.25%;
+    }
+     div > label {
+        margin-top: 12px;
+    }
+    .awesome h1 {
+        font-size: 5.8em;
+    }
+    .awesome   h2 {
+        float: left;
+        font-size: 1.9em;
+        margin-left: 1.25%;
+    }
+    .awesome  form {
+        margin: 4.15em auto 0;
+        z-index: 3000;
+        position: relative;
+    }
+    .awesome  {
+        width: 90%;
+    }
+      .main {
+        padding: 3.8em 1.5em .75em;
+        position: relative;
+        z-index: 10;
+    }
+    .awesome  ul {
+        display: -webkit-flex;
+        display: flex;
+        clear: both;
+
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-top: 1.25em;
+    }
+    .awesome  ul li {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        -webkit-flex-basis: 47.5%;
+        flex-basis: 47.5%;
+        margin: 0 1.25% 1em;
+    }
+}
+@media (min-width: 880px) {
+    .awesome  ul li {
+        -webkit-flex-basis: 20%;
+        flex-basis: 20%;
+    }
 }
 

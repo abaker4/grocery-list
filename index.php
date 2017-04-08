@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Grocery App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="assets/styles.css" rel="stylesheet">
 
 </head>
@@ -22,21 +23,21 @@
                 <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#todo">Groceri List</a>
+                <a class="nav-link" href="#test">Groceri List</a>
             </li>
         </ul>
     </div>
-    <a class="navbar-brand float-left mr-0 hidden-xs-down" href="#home"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Groceri</a>
+    <a id ="nav-header"class="navbar-brand float-left mr-0 hidden-xs-down" href="#home"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Groceri</a>
 </div>
 </nav>
 
 <!-- Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-sm-center pt-3">
-        <h1 class="display-2 text-white">Groceri</h1>
-        <p class="lead text-white"> Be efficient | Build a list</p>
+        <h1 id = "main-header" class="display-2 text-white">Groceri</h1>
+        <p id="sub-header" class="lead text-white"> Be efficient | Build a list</p>
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-primary btn-lg" href="#todo">Create List</a>
+            <a class="btn btn-primary btn-lg" href="#test">Create List</a>
         </div>
     </div>
 </div>
@@ -74,52 +75,27 @@
         </div>
     </div>
 </div><!-- About -->
-
+<!--grocery list-->
 <div id="jumbotron" class="jumbotron jumbotron-fluid">
+    <div id="test"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-block">
-                        <div>
-                            <h1 id="todo">Groceri List</h1>
-                            <input type="text" class="form-control" placeholder="Add Item">
-                            <button class="btn btn-success mt-2">Mark all as done</button>
-
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value=""> Milk</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value=""> Bread</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value=""> Eggs</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-              </div>
-            </div>
-            <div class="col-md-6 float-right mr-0">
-                <div class="card">
-                    <div class="card-block">
-                        <div>
-                            <h1>Completed Items</h1>
-                            <ul class="list-unstyled">
-                                <li><del>Some item </del><button class="remove-item btn btn-default btn-xs pull-right"><span><i class="fa fa-times-circle" aria-hidden="true"></i></span></button></li>
-
-                            </ul>
+                        <div class="awesome">
+                            <header>
+                                <h1 id="todo" class="text-center">Groceri List</h1>
+                                <form id="registrar">
+                                    <input type="text" class="form-control" name="name" placeholder="Add Item">
+                                    <button id ="submit" class="btn btn-success mt-2" type="submit" name="submit" value="submit">Submit</button>
+                                </form>
+                            </header>
+                            <div class="main">
+                                <h2 class="items">Items</h2>
+                                <ul id= "invitedList" class="list-unstyled">
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,8 +103,7 @@
         </div>
     </div>
 </div>
-
- <!-- /jumbotron -->
+ <!-- /grocery list -->
 
 
 

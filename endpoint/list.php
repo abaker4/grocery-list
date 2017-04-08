@@ -5,18 +5,20 @@ require_once '../_database.php';
 
 // CREATE NEW LIST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $sql = "INSERT INTO item(title, quantity, fulfilled)
-VALUES (?,?,?)";
-    $params = [$_POST['title'], $_POST['quantity'], $_POST['fulfilled'];
+    $sql = "INSERT INTO list VALUES(?)";
+    $params = $_POST['title'];
+    $stmt = $db->prepare($sql);
+    $result = $stmt->execute($params);
+
+
+}
+// UPDATE EXISTING LIST
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+    $sql = "UPDATE list SET title = ? WHERE id = ?";
+    $params = $_PUT["title"], $_PUT["id"];
     $stmt = $db->prepare($sql);
     $result = $stmt->execute($params);
 }
-
-// UPDATE EXISTING LIST
-if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-
-}
-
 // DELETE LIST
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $id = $_REQUEST["id"];
