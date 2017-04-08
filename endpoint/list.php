@@ -5,23 +5,93 @@ require_once '../_database.php';
 
 // CREATE NEW LIST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $sql = "INSERT INTO list VALUES(?)";
-    $params = $_POST['title'];
+    $sql = "INSERT INTO list (title) VALUES(?)";
+    $params = [$_POST['title']];
     $stmt = $db->prepare($sql);
     $result = $stmt->execute($params);
 
+    if ($result) {
+        $id = $db->lastInsertId();
+        $sql = "SELECT * FROM list where id = ?";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute([$id]);
+        $newRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $response = [
+            'status' => 'OK',
+            'records' => $newRecord
+        ];
+    } else {
+        $response = [
+            'status' => 'FAILED',
+            'message' => 'Failed to insert new record'
+        ];
+    }
+
+    echo prepareResponse($response);
 
 }
 // UPDATE EXISTING LIST
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-    $sql = "UPDATE list SET title = ? WHERE id = ?";
-    $params = $_PUT["title"], $_PUT["id"];
+    parse_str(file_get_contents('php://input'), $_PUT);
+
+    $id = $_PUT["id"];
+    $title = $_PUT["title"];
+
+    if (empty($id)) {
+        $response = [
+            'status' => 'FAILED',
+            'message' => 'No id supplied for update'
+        ];
+
+        echo prepareResponse($response);
+        return;
+    }
+
+    if (empty($title)) {
+        $response = [
+            'status' => 'FAILED',
+            'message' => 'No title supplied for update'
+        ];
+
+        echo prepareResponse($response);
+        return;
+    }
+
+    $sql = "UPDATE list SET title = ?, updated_at = ? WHERE id = ?";
     $stmt = $db->prepare($sql);
+    $params = [$title, date('Y-m-d H:i:s'), $id];
     $result = $stmt->execute($params);
+
+    if ($result) {
+        $sql = "SELECT * FROM list where id = ?";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute([$id]);
+        $updatedRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $response = [
+            'status' => 'OK',
+            'records' => $updatedRecord
+        ];
+    } else {
+        $response = [
+            'status' => 'FAILED',
+            'message' => 'Failed to update record'
+        ];
+    }
+
+    echo prepareResponse($response);
 }
 // DELETE LIST
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    $id = $_REQUEST["id"];
+    parse_str(file_get_contents('php://input'), $_DELETE);
+
+    $id = $_DELETE["id"];
+
+
+
+    // insert validation
+
+
+
     $sql = "DELETE FROM list WHERE  id = ?";
     $stmt = $db->prepare($sql);
     $stmt->execute(array($id));
