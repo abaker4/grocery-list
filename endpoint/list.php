@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
             'message' => 'No title supplied for update'
         ];
 
+
         echo prepareResponse($response);
         return;
     }
@@ -63,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $result = $stmt->execute($params);
 
     if ($result) {
-        $sql = "SELECT * FROM list where id = ?";
+        $sql = "SELECT * FROM list WHERE id = ?";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute([$id]);
         $updatedRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -86,15 +87,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
     $id = $_DELETE["id"];
 
-
-
-    // insert validation
-
-
-
     $sql = "DELETE FROM list WHERE  id = ?";
     $stmt = $db->prepare($sql);
     $stmt->execute(array($id));
+    $lists = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+    if($lists){
+        $sql = 'SELECT * FROM item WHERE id =?';
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute([$id]);
+        $updatedRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $response = [
+            'status' => 'OK',
+            'message' => $updatedRecord
+
+        ];
+    } else {
+        $response = [
+            'status' => 'FAILED',
+            'message'=> 'Failed to update record'
+        ];
+    }
+
+    echo prepareResponse($response);
+
+    // insert validation
+
 }
 
 // READ LIST

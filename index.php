@@ -37,7 +37,7 @@
         <h1 id = "main-header" class="display-2 text-white">Groceri</h1>
         <p id="sub-header" class="lead text-white"> Be efficient | Build a list</p>
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-primary btn-lg" href="#test">Create List</a>
+            <a class="btn btn-primary btn-lg" href="#test" data-toggle="modal" data-target="#createListModal">Create List</a>
         </div>
     </div>
 </div>
@@ -56,13 +56,7 @@
             </blockquote>
         </div>
 
-<!--        <div class="col-lg-4 lg-pull-4">-->
-<!--            <h3 class="mb-2">Expert Speakers</h3>-->
-<!--            <p>Our expert speaker lineup was just announced, so don't wait too long before grabbing your tickets!</p>-->
-<!--            <p>Want to meet the international JavaScript community and share skills with some of the world's top experts, hackers, and makers? Be the first to know what to expect for the future of JavaScript.</p>-->
-<!--            <p>Full Stack Conf is committed to being inclusive and welcoming for everyone. We look forward to another intensive day of learning and sharing.</p>-->
-<!---->
-<!--        </div>-->
+
         <div class="col-lg-4 lg-pull-4 mb-4">
             <h2 class="mb-2">What Groceri Provides</h2>
             <div class="list-group">
@@ -74,38 +68,38 @@
             </div>
         </div>
     </div>
-</div><!-- About -->
-<!--grocery list-->
-<div id="jumbotron" class="jumbotron jumbotron-fluid">
-    <div id="test"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="awesome">
-                            <header>
-                                <h1 id="todo" class="text-center">Groceri List</h1>
-                                <form id="registrar">
-                                    <input type="text" class="form-control" name="name" placeholder="Add Item">
-                                    <button id ="submit" class="btn btn-success mt-2" type="submit" name="submit" value="submit">Submit</button>
-                                </form>
-                            </header>
-                            <div class="main">
-                                <h2 class="items">Items</h2>
-                                <ul id= "invitedList" class="list-unstyled">
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
+<!--grocery list-->
+<!--<div id="jumbotron" class="jumbotron jumbotron-fluid">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-4 col-lg-12">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-block">-->
+<!--                        <div class="awesome">-->
+<!--                            <header>-->
+<!--
+<!--                                <form id="registrar">-->
+<!--                                    <input type="text" class="form-control" name="name" placeholder="Add Item">-->
+<!--                                    <button id ="submit" class="btn btn-success mt-2" type="submit" name="submit" value="submit">Submit</button>-->
+<!---->
+<!--                                </form>-->
+<!--                            </header>-->
+<!--                            <div class="main">-->
+                                <div id="test"></div>
+<!--                                <h2 class="items">Items</h2>-->
+<!--                                <ul id= "invitedList" class="list-unstyled">-->
+<!---->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
  <!-- /grocery list -->
-
-
 
 
 <!--footer-->
@@ -186,12 +180,28 @@
 
 
 <!--footer-->
-
+<div class="modal fade" id="createListModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add List</h4>
+            </div>
+            <div class="modal-body">
+            <input type="text" id="listTitle">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveListButton">Save List</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/8dd28529fa.js"></script>
