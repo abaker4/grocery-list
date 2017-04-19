@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_PUT["id"];
         $title = $_PUT["title"];
         $quantity = $_PUT["quantity"];
-        $fulfilled = $_PUT["fulfilled"];
+        $fulfilled = intval($_PUT["fulfilled"], 10);
         $list = $_PUT["list"];
 
         if (empty($id)) {
@@ -62,7 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo prepareResponse($response);
             return;
         }
-        if (empty($fulfilled)) {
+
+        if ($fulfilled !== 0 && $fulfilled !== 1) {
             $response = [
                 'status' => 'FAILED',
                 'message' => 'No fulfilled supplied for update'
@@ -123,19 +124,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         $id = $_DELETE["id"];
-        $sql = "DELETE FROM item WHERE  id = ?";
+        $sql = "DELETE FROM item WHERE id = ?";
         $stmt = $db->prepare($sql);
-        $stmt->execute(array($id));
-        $items = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $result = $stmt->execute(array($id));
 
-        if ($items) {
-            $sql = 'SELECT * FROM list WHERE id =?';
-            $stmt = $db->prepare($sql);
-            $result = $stmt->execute([$id]);
-            $updatedRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        // $items = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        if ($result) {
             $response = [
                 'status' => 'OK',
-                'message' => $updatedRecord
+                'message' => 'DELETED SUCCESSFULLY'
 
             ];
         } else {
@@ -150,9 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // READ ITEMS
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $sql = "
-      SELECT * FROM item
-    ";
+            $sql = "SELECT * FROM item ";
             $populatedLists = [];
             $stmt = $db->prepare($sql);
             $stmt->execute(array());
@@ -179,4 +176,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             return json_encode($data);
         }
+
 

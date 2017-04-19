@@ -27,7 +27,7 @@
             </li>
         </ul>
     </div>
-    <a id ="nav-header"class="navbar-brand float-left mr-0 hidden-xs-down" href="#home"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Groceri</a>
+    <a id ="nav-header" class="navbar-brand float-left mr-0 hidden-xs-down" href="#home"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Groceri</a>
 </div>
 </nav>
 
@@ -41,69 +41,42 @@
         </div>
     </div>
 </div>
- <!-- /jumbotron -->
-
-<div id="about" class="container pt-2">
-    <!-- About -->
-    <div class="row">
-        <div class="col-lg-8 lg-push-4">
-            <h2 class="mb-2">About Groceri</h2>
-            <p>Groceri is a full service inventory management platform that is both user-friendly and powerful at the same time.</p>
-            <p>Through its proprietary content-management engine, users are able to use their time more efficiently and stay on top of their daily Groceri needs. <a href="#"> See what our customers are saying about Groceri.</a></p>
-            <blockquote class="blockquote blockquote-reverse text-muted">
-                <p class="mb-0">Groceri has saved my company time and money in ways I couldn't have imagined. Everyone should adopt their platform.</p>
-                <footer class="blockquote-footer">Jeff Bezos <cite title="Source Title">Amazon CEO</cite></footer>
-            </blockquote>
-        </div>
-
-
-        <div class="col-lg-4 lg-pull-4 mb-4">
-            <h2 class="mb-2">What Groceri Provides</h2>
-            <div class="list-group">
-                <a href="#" class="list-group-item"><strong>Scalability</strong>: Customize any type of list</a>
-                <a href="#" class="list-group-item"><strong>Efficiency</strong>: Updates in real time </a>
-                <a href="#" class="list-group-item"><strong>Portability</strong>: Access from around the globe</a>
-                <a href="#" class="list-group-item"><strong>Intelligence</strong>: Predictive search based off of data analytics</a>
-                <a href="#" class="list-group-item"><strong>Reliability</strong>: 24/7 customer service</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--grocery list-->
-<!--<div id="jumbotron" class="jumbotron jumbotron-fluid">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-4 col-lg-12">-->
-<!--                <div class="card">-->
-<!--                    <div class="card-block">-->
-<!--                        <div class="awesome">-->
-<!--                            <header>-->
-<!--
-<!--                                <form id="registrar">-->
-<!--                                    <input type="text" class="form-control" name="name" placeholder="Add Item">-->
-<!--                                    <button id ="submit" class="btn btn-success mt-2" type="submit" name="submit" value="submit">Submit</button>-->
+<!-- /jumbotron -->
+<!--<div id="about" class="container pt-2">-->
+<!--    <!-- About -->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-8 lg-push-4">-->
+<!--            <h2 class="mb-2">About Groceri</h2>-->
+<!--            <p>Groceri is a full service inventory management platform that is both user-friendly and powerful at the same time.</p>-->
+<!--            <p>Through its proprietary content-management engine, users are able to use their time more efficiently and stay on top of their daily Groceri needs. <a href="#"> See what our customers are saying about Groceri.</a></p>-->
+<!--            <blockquote class="blockquote blockquote-reverse text-muted">-->
+<!--                <p class="mb-0">Groceri has saved my company time and money in ways I couldn't have imagined. Everyone should adopt their platform.</p>-->
+<!--                <footer class="blockquote-footer">Jeff Bezos <cite title="Source Title">Amazon CEO</cite></footer>-->
+<!--            </blockquote>-->
+<!--        </div>-->
 <!---->
-<!--                                </form>-->
-<!--                            </header>-->
-<!--                            <div class="main">-->
-                                <div id="test"></div>
-<!--                                <h2 class="items">Items</h2>-->
-<!--                                <ul id= "invitedList" class="list-unstyled">-->
 <!---->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+<!--        <div class="col-lg-4 lg-pull-4 mb-4">-->
+<!--            <h2 class="mb-2">What Groceri Provides</h2>-->
+<!--            <div class="list-group">-->
+<!--                <a href="#" class="list-group-item"><strong>Scalability</strong>: Customize any type of list</a>-->
+<!--                <a href="#" class="list-group-item"><strong>Efficiency</strong>: Updates in real time </a>-->
+<!--                <a href="#" class="list-group-item"><strong>Portability</strong>: Access from around the globe</a>-->
+<!--                <a href="#" class="list-group-item"><strong>Intelligence</strong>: Predictive search based off of data analytics</a>-->
+<!--                <a href="#" class="list-group-item"><strong>Reliability</strong>: 24/7 customer service</a>-->
 <!--            </div>-->
 <!--        </div>-->
 <!--    </div>-->
-<!--    </div>-->
- <!-- /grocery list -->
+<!--</div>-->
+
+<div id="jumbotron" class="jumbotron jumbotron-fluid">
+    <div id="test"></div>
+</div>
+<!-- /grocery list
 
 
 <!--footer-->
-
+<footer>
 <div class="footer-middle">
     <div class="container">
         <div class="row">
@@ -188,7 +161,7 @@
                 <h4 class="modal-title">Add List</h4>
             </div>
             <div class="modal-body">
-            <input type="text" id="listTitle">
+            <input type="text" id="listTitle" class="form-control"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

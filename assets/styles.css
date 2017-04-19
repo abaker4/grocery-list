@@ -5,7 +5,7 @@
 }
 #jumbotron {
 
-    background: grey;
+    background: #fff;
 }
 
 #main-header{
@@ -23,6 +23,11 @@
     margin: 1.25em;
     padding: 1.25em;
 }
+
+.fulfilled {
+    text-decoration: line-through;
+}
+
 /*}*/
 /*.awesome {*/
     /*font-family: 'lato', sans-serif;*/
@@ -187,7 +192,7 @@ button {
   }
   div#title.col.card.list{
       margin: 3px;
-      padding 3px;
+      padding: 3px;
   }
 
   #container {
@@ -201,6 +206,7 @@ button {
  span.badge.badge-pill.badge-success {
      margin-top: 2px;
      margin-bottom: 2px;
+     text-align: right;
   }
 
 /**Media Queries***/

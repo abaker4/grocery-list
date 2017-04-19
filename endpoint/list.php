@@ -89,23 +89,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
     $sql = "DELETE FROM list WHERE  id = ?";
     $stmt = $db->prepare($sql);
-    $stmt->execute(array($id));
-    $lists = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    $result = $stmt->execute(array($id));
+//    $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-    if($lists){
-        $sql = 'SELECT * FROM item WHERE id =?';
-        $stmt = $db->prepare($sql);
-        $result = $stmt->execute([$id]);
-        $updatedRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    if($result){
         $response = [
             'status' => 'OK',
-            'message' => $updatedRecord
+            'message' => 'Deleted Successfully'
 
         ];
     } else {
         $response = [
             'status' => 'FAILED',
-            'message'=> 'Failed to update record'
+            'message'=> 'Failed to delete record'
         ];
     }
 
