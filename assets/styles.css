@@ -5,7 +5,8 @@
 }
 #jumbotron {
 
-    background: #fff;
+    background: #c8eae1;
+
 }
 
 #main-header{
@@ -26,6 +27,8 @@
 
 .fulfilled {
     text-decoration: line-through;
+    font-weight: bold;
+
 }
 
 /*}*/
@@ -91,82 +94,15 @@
 /*}*/
 
 
-
 input,
 button {
     border: none;
     outline: none;
 }
-/*.awesome form input {*/
-    /*font-size: 1em;*/
-    /*text-align: center;*/
-/*}*/
-/*.awesome ul {*/
-    /*margin: 0;*/
-/*}*/
-/*.awesome .main {*/
-    /*padding: 2em 1em .75em;*/
-/*}*/
-/*.awesome li span,*/
-/*.awesome li input[type=text] {*/
-    /*color: #707070;*/
-    /*font-size: 1.3em;*/
-    /*margin-bottom: .3em;*/
-/*}*/
-/*.awesome li input[type=text] {*/
-    /*padding: .2em;*/
-    /*width: 95%;*/
-    /*border: 1px dotted rgba(0,0,0, .2);*/
-/*}*/
-/*.awesome li label {*/
-    /*font-size: .9em;*/
-    /*display: block;*/
-    /*color: rgba(112, 112, 112, .55);*/
-/*}*/
-/*.awesome li span,*/
-/*.awesome li input[type=text]:first-child {*/
-    /*display: block;*/
-/*}*/
-/*.awesome li button {*/
-    /*font-size: .78em;*/
-    /*margin-top: 1.65em;*/
-    /*margin-right: .4em;*/
-    /*border-radius: .3em;*/
-    /*padding: .4em .6em;*/
-    /*color: white;*/
-    /*background: #58b7cd;*/
-/*}*/
-/*.awesome li button:last-child {*/
-    /*background: rgba(88, 183, 205, .5);*/
-/*}*/
-/*.awesome ul {*/
-    /*width: 100%;*/
-    /*max-width: 900px;*/
-    /*margin: 2.5em auto;*/
-    /*border-radius: .35em;*/
-    /*background: #fcfcfc;*/
-    /*overflow: hidden;*/
-    /*box-shadow: 0 0 26px rgba(0,0,0, .13);*/
-    /*box-sizing: border-box;*/
-/*}*/
-/*.awesome div > input:last-child {*/
-    /*font-size: 1em;*/
-    /*margin-left: 6px;*/
-/*}*/
-/*.awesome div > label {*/
-    /*color: #767676;*/
-/*}*/
-
-/*!* responded *!*/
- /*.responded {*/
-    /*transition: 0.4s;*/
-    /*border-color: rgba(88, 183, 205, .9);*/
-/*}*/
- /*.responded label {*/
-    /*transition: 0.4s;*/
-    /*color: rgba(88, 183, 205, 1);*/
-/*}*/
-
+.title{
+    background: #d6d6da;
+    font-weight: 400;
+}
  #listItems {
      background: #f7f7f7;
      box-sizing:border-box;
@@ -208,6 +144,7 @@ button {
      margin-bottom: 2px;
      text-align: right;
   }
+
 
 /**Media Queries***/
 /*@media (min-width: 0) and (max-width: 768px) {*/

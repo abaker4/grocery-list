@@ -32,7 +32,7 @@
 </nav>
 
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid mb-0">
     <div class="container text-sm-center pt-3">
         <h1 id = "main-header" class="display-2 text-white">Groceri</h1>
         <p id="sub-header" class="lead text-white"> Be efficient | Build a list</p>
@@ -69,7 +69,7 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div id="jumbotron" class="jumbotron jumbotron-fluid">
+<div id="jumbotron" class="jumbotron jumbotron-fluid mt-8">
     <div id="test"></div>
 </div>
 <!-- /grocery list
