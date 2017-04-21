@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "SELECT * FROM item where id = ?";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute([$id]);
-        $newRecord = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $newRecord = $stmt->fetch(\PDO::FETCH_ASSOC);
         $response = [
             'status' => 'OK',
             'records' => $newRecord
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_PUT["id"];
         $title = $_PUT["title"];
         $quantity = $_PUT["quantity"];
-        $fulfilled = intval($_PUT["fulfilled"], 10);
+        $fulfilled = (isset($_PUT["fulfilled"])) ? intval($_PUT["fulfilled"], 10) : false;
         $list = $_PUT["list"];
 
         if (empty($id)) {
@@ -53,39 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return;
         }
 
-        if (empty($title)) {
+        if ( $fulfilled !== 0 && $fulfilled !== 1 && empty($title) && empty($quantity) && empty($list) ) {
             $response = [
                 'status' => 'FAILED',
-                'message' => 'No title supplied for update'
-            ];
-
-            echo prepareResponse($response);
-            return;
-        }
-
-        if ($fulfilled !== 0 && $fulfilled !== 1) {
-            $response = [
-                'status' => 'FAILED',
-                'message' => 'No fulfilled supplied for update'
-            ];
-
-            echo prepareResponse($response);
-            return;
-        }
-
-        if (empty($quantity)) {
-            $response = [
-                'status' => 'FAILED',
-                'message' => 'No quantity supplied for update'
-            ];
-
-            echo prepareResponse($response);
-            return;
-        }
-        if (empty($list)) {
-            $response = [
-                'status' => 'FAILED',
-                'message' => 'No list supplied for update'
+                'message' => 'No data to update! dummy.'
             ];
 
             echo prepareResponse($response);
@@ -93,9 +64,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        $sql = "UPDATE item SET title = ?, fulfilled = ?, quantity = ?, list = ? WHERE id = ?";
+        // set up param array and start of sql statement
+        // and add on to it based on what values are provided
+        $params = [];
+        $sql = "UPDATE item SET ";
+
+        if (!empty($title)) {
+            $sql .= ' title = ?,';
+            array_push($params, $title);
+        }
+
+        if ($fulfilled === 0 || $fulfilled === 1) {
+            $sql .= ' fulfilled = ?,';
+            array_push($params, $fulfilled);
+        }
+
+        if (!empty($quantity)) {
+            $sql .= ' quantity = ?,';
+            array_push($params, $quantity);
+        }
+
+        if (!empty($list)) {
+            $sql .= ' list = ?,';
+            array_push($params, $list);
+        }
+
+        $sql = rtrim($sql, ',');
+
+        $sql .=  " WHERE id = ?";
+        array_push($params, $id);
+
         $stmt = $db->prepare($sql);
-        $params = [$title, $fulfilled, $quantity, $list, $id];
         $result = $stmt->execute($params);
 
 
@@ -174,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS');
             header('Access-Control-Allow-Headers: Content-Type, Accept');
 
-            return json_encode($data);
+            return json_encode($data, JSON_NUMERIC_CHECK);
         }
 
 
