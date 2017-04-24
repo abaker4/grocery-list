@@ -5,7 +5,7 @@
 }
 #jumbotron {
 
-    background: #c8eae1;
+    background: #a19c9c;
 
 }
 
@@ -28,7 +28,6 @@
 .fulfilled {
     text-decoration: line-through;
     font-weight: bold;
-
 }
 
 /*}*/
@@ -92,16 +91,41 @@
     /*border: solid 4px white;*/
     /*box-shadow: 0 1px 14px rgba(0,0,0, .12);*/
 /*}*/
-
+.addButton{
+    background: #77aaff;
+    box-shadow:1px 1px 1px #888888;
+}
+.createListButton {
+    background: #77aaff;
+    box-shadow:1px 1px 1px #888888;
+}
+.editButton, .submit {
+     background: #68c4af;
+     margin: 2px;
+ }
 
 input,
 button {
     border: none;
     outline: none;
+    font-family: 'Shadows Into Light', cursive;
+}
+input:hover {
+    opacity: .8;
+    background: #c0c5ce;
+    text-align: center;
+
+    font-weight: bold;
+}
 }
 .title{
-    background: #d6d6da;
-    font-weight: 400;
+    background: #F4F6F6;
+}
+
+span.title,
+.item-title {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
 }
  #listItems {
      background: #f7f7f7;
@@ -116,11 +140,13 @@ button {
      opacity: .8;
  }
 
+
   div#title {
       background: #d8d8d8;
       padding: 4px;
       box-sizing: border-box;
       text-align: center;
+      font-weight: bold;
  }
   div#title.col.card.list {
       box-sizing:border-box;

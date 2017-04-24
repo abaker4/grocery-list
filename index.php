@@ -5,6 +5,7 @@
     <title>Grocery App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <link href="assets/styles.css" rel="stylesheet">
 
 </head>
@@ -37,13 +38,13 @@
         <h1 id = "main-header" class="display-2 text-white">Groceri</h1>
         <p id="sub-header" class="lead text-white"> Be efficient | Build a list</p>
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-primary btn-lg" href="#test" data-toggle="modal" data-target="#createListModal">Create List</a>
+            <a class="btn btn-primary btn-lg createListButton" href="#test" data-toggle="modal" data-target="#createListModal">Create List</a>
         </div>
     </div>
 </div>
-<!-- /jumbotron -->
+
 <!--<div id="about" class="container pt-2">-->
-<!--    <!-- About -->
+<!--<!--     About -->
 <!--    <div class="row">-->
 <!--        <div class="col-lg-8 lg-push-4">-->
 <!--            <h2 class="mb-2">About Groceri</h2>-->
@@ -54,8 +55,8 @@
 <!--                <footer class="blockquote-footer">Jeff Bezos <cite title="Source Title">Amazon CEO</cite></footer>-->
 <!--            </blockquote>-->
 <!--        </div>-->
-<!---->
-<!---->
+
+
 <!--        <div class="col-lg-4 lg-pull-4 mb-4">-->
 <!--            <h2 class="mb-2">What Groceri Provides</h2>-->
 <!--            <div class="list-group">-->
@@ -69,8 +70,8 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div id="jumbotron" class="jumbotron jumbotron-fluid mt-8">
-    <div id="test"></div>
+<div id="jumbotron" class="jumbotron jumbotron-fluid mt-8 ">
+    <div id="grocery"></div>
 </div>
 <!-- /grocery list
 
